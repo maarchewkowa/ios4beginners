@@ -9,25 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var textField: UITextField!
+    
     @IBAction func okButton(_ sender: Any) {
         if (textField.text?.isEmpty)!
         {
             print("No text found!")
         } else {
-        print(textField.text!)
+            print(textField.text!)
+        }
     }
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
