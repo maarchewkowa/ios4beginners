@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Joke Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="JokeController" customModule="Switter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qSw-4C-VD3">
+                                <rect key="frame" x="197" y="79" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="7fR-gg-yZt"/>
+                                    <constraint firstAttribute="width" constant="20" id="Q2r-mO-yNj"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoT-nr-07z">
+                                <rect key="frame" x="20" y="146" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2C-ue-hlD">
+                                <rect key="frame" x="169" y="203" width="76" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="New Joke!"/>
+                                <connections>
+                                    <action selector="newJokeButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k37-yH-fqB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U2C-ue-hlD" firstAttribute="top" secondItem="KoT-nr-07z" secondAttribute="bottom" constant="57" id="1oO-VP-PPY"/>
+                            <constraint firstItem="KoT-nr-07z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FZj-tJ-4Aj"/>
+                            <constraint firstItem="qSw-4C-VD3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jzd-lD-Xrh"/>
+                            <constraint firstItem="U2C-ue-hlD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L0U-Ig-csq"/>
+                            <constraint firstItem="KoT-nr-07z" firstAttribute="top" secondItem="qSw-4C-VD3" secondAttribute="bottom" constant="47" id="aKb-v9-v28"/>
+                            <constraint firstItem="qSw-4C-VD3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="l1i-iL-ajg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KoT-nr-07z" secondAttribute="trailing" constant="20" id="lUm-r2-whs"/>
+                            <constraint firstItem="KoT-nr-07z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ssb-q5-5X2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelJoke" destination="KoT-nr-07z" id="CNj-vj-ctd"/>
+                        <outlet property="loadActivityIndicator" destination="qSw-4C-VD3" id="B7V-qG-SRj"/>
+                        <outlet property="newJokeButton" destination="U2C-ue-hlD" id="yyd-Ur-dI5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-80.799999999999997" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
