@@ -13,12 +13,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func okButton(_ sender: Any) {
-        if (textField.text?.isEmpty)!
-        {
+        
+        // pierwsze rozwiązanie
+        switch textField.text  {
+        case .none, .some(""):
             print("No text found!")
-        } else {
+        default:
             print(textField.text!)
         }
+        // drugie rozwiązanie
+        if let text = textField.text, text != "" {
+            print(text)
+        } else {
+            print("No text found")
+        }
+        // złe rozwiązanie
+//        if (textField.text?.isEmpty)!
+//        {
+//           print("No text found!")
+//        } else {
+//            print(textField.text!)
+//        }
     }
     
     override func viewDidLoad() {
