@@ -19,7 +19,7 @@ class JokeController: UIViewController {
         let endpoint = "https://switter.int.daftcode.pl/api/joke"
         let url = URL(string: endpoint)!
         var urlRequest = URLRequest(url: url)
-        let deviceUUID = UIDevice.current.identifierForVendor?.uuidString ?? "unkown device uuid"
+        let deviceUUID = UIDevice.current.identifierForVendor?.uuidString ?? "unknown device uuid"
         urlRequest.addValue(deviceUUID, forHTTPHeaderField: "x-device-uuid")
         
         let session = URLSession(configuration: URLSessionConfiguration.ephemeral)
