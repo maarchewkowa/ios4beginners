@@ -19,7 +19,8 @@ class PokemonDetailViewController: UIViewController {
         title = pokemon!.name
         pokemonNameLabel.textColor = pokemon?.keyColor
         pokemonNameLabel.text = pokemon?.name
-        
+        pokemonFullImage.backgroundColor = pokemon?.keyColor
+
         let endpoint = "https://switter.int.daftcode.pl/api/pokemon/\(pokemon!.number)/image"
         let url = URL(string: endpoint)!
         var urlRequest = URLRequest(url: url)

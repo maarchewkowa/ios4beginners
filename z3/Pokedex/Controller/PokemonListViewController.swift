@@ -62,13 +62,14 @@ class PokemonListViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCollectionViewCell", for: indexPath) as? PokemonCollectionViewCell else { fatalError() }
-        cell.backgroundColor = UIColor.lightGray
+        cell.backgroundColor = UIColor(hex: 0xf1f1f1)
         let pokemon = pokemonList[indexPath.item]
         cell.pokemonNameLabel.textColor = pokemon.keyColor
         cell.pokemonNameLabel.text = pokemon.name
         cell.pokemonImage.image = nil
         cell.pokemonId = pokemon.number
-        
+        cell.pokemonImage.backgroundColor = pokemon.keyColor
+
         
         let endpoint = "https://switter.int.daftcode.pl/api/pokemon/\(pokemon.number)/thumbnail"
         let url = URL(string: endpoint)!
@@ -90,7 +91,9 @@ class PokemonListViewController: UIViewController, UICollectionViewDataSource, U
                 let pokemonImage = UIImage(data: data)
                 
                 DispatchQueue.main.async {
+                    if cell.pokemonId == pokemon.number{
                     cell.pokemonImage.image = pokemonImage
+                    }
                 }
                 
             } catch {
